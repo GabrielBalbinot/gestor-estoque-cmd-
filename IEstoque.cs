@@ -10,6 +10,6 @@ namespace GestorEstoque
     {
         void Exibir();
         void AdicionarEntrada();
-        void AdicionarSaída();
+        void AdicionarSaida();
     }
 }

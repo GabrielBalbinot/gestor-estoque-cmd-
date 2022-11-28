@@ -20,12 +20,18 @@ namespace GestorEstoque
 
         public void AdicionarEntrada()
         {
-            
+            Console.WriteLine("Produtos digitais não possuem estoque.");
+            Console.ReadLine();
         }
 
-        public void AdicionarSaída()
+        public void AdicionarSaida()
         {
-           
+            Console.WriteLine($"Adicionar vendas para o E-Book {nome}.");
+            Console.WriteLine("Digite a quantidade de vendas para registrar: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vendas += entrada;
+            Console.WriteLine("Venda(s) registrada(s).");
+            Console.ReadLine();
         }
 
         public void Exibir()

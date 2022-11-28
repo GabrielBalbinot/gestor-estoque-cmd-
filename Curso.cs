@@ -20,12 +20,22 @@ namespace GestorEstoque
 
         public void AdicionarEntrada()
         {
-            
+            Console.WriteLine($"Adicionar vagas disponívieis para o curso {nome}.");
+            Console.WriteLine("Digite a quantidade de vagas para dar entrada: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vagas += entrada;
+            Console.WriteLine("Entrada registrada.");
+            Console.ReadLine();
         }
 
-        public void AdicionarSaída()
+        public void AdicionarSaida()
         {
-            
+            Console.WriteLine($"Adicionar matrículas no curso {nome}.");
+            Console.WriteLine("Digite a quantidade de matrículas para registrar: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vagas -= entrada;
+            Console.WriteLine("Matrícula(s) registrada(s).");
+            Console.ReadLine();
         }
 
         public void Exibir()

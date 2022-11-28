@@ -35,30 +35,38 @@ namespace GestorEstoque
                 switch (opcao)
                 {
                     case Menu.Lista:
+                        Console.Clear();
                         Listagem();
                         break;
                     case Menu.Adicionar:
+                        Console.Clear();
                         Cadastro();
                         break;
                     case Menu.Remover:
+                        Console.Clear();
                         Remover();
                         break;
                     case Menu.Entrada:
+                        Console.Clear();
+                        Entrada();
                         break;
                     case Menu.Saída:
+                        Console.Clear();
+                        Saida();
                         break;
                     case Menu.Zerar:
+                        Console.Clear();
                         ZerarListagem();
                         break;
                     case Menu.Fechar:
                         fecharPrograma = true;
                         break;
                 }
+                Console.Clear();
             }
         }
         static void Listagem()
         {
-            Console.Clear();
             int id = 0;
             foreach (IEstoque produto in produtos)
             {
@@ -66,14 +74,43 @@ namespace GestorEstoque
                 produto.Exibir();
                 id++;
             }
-            Console.WriteLine("\nDigite ENTER para voltar ao menu.");
             Console.ReadLine();
-            Console.Clear();
         }
         static void MostrarMenu()
         {
             Console.WriteLine("1- Listar produtos\n2- Adicionar produto\n3- Remover produto\n" +
                               "4- Entrada de produtos\n5- Saída de produtos\n6- Zerar listagem\n7- Fechar programa\n");
+        }
+        static void Entrada()
+        {
+            Listagem();
+            Console.WriteLine("Digite o ID que deseja dar entrada:");            
+            int id = int.Parse(Console.ReadLine());
+
+            while (id < 0 || id > produtos.Count - 1)
+            {
+                Console.WriteLine($"Por favor digite um ID válido:");
+                id = int.Parse(Console.ReadLine());
+            }
+
+            produtos[id].AdicionarEntrada();
+            Salvar();
+
+        }
+        static void Saida()
+        {
+            Listagem();
+            Console.WriteLine("Digite o ID que deseja dar baixa:");
+            int id = int.Parse(Console.ReadLine());
+
+            while (id < 0 || id > produtos.Count - 1)
+            {
+                Console.WriteLine($"Por favor digite um ID válido:");
+                id = int.Parse(Console.ReadLine());
+            }
+
+            produtos[id].AdicionarSaida();
+            Salvar();
         }
         static void Cadastro()
         {
@@ -92,7 +129,6 @@ namespace GestorEstoque
                     CadastroCurso();
                     break;
             }
-            Console.Clear();
         }
         static void CadastroPF()
         {
@@ -135,9 +171,8 @@ namespace GestorEstoque
         }
         static void Remover()
         {
-            Console.Clear();
-
-            Console.WriteLine("Digite o ID que deseja remover:");
+            Listagem();
+            Console.WriteLine("\nDigite o ID que deseja remover:");
             int id = int.Parse(Console.ReadLine());
 
             while (id < 0 || id > produtos.Count - 1)
@@ -164,7 +199,6 @@ namespace GestorEstoque
             }
 
             Console.ReadLine();
-            Console.Clear();
         }
         static void Salvar()
         {
@@ -208,10 +242,11 @@ namespace GestorEstoque
                 Salvar();
                 Console.WriteLine("Dados salvos na lista apagados com sucesso!");
             }
-            
-            Console.WriteLine("Pressione ENTER para voltar ao menu.");
+            else
+            {
+                Console.WriteLine("Lista permanece inalterada.");
+            }
             Console.ReadLine();
-            Console.Clear();
         }
     }
 }
