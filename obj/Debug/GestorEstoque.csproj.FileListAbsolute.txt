@@ -1,0 +1,8 @@
+C:\Users\gabri\source\repos\GestorEstoque\bin\Debug\GestorEstoque.exe.config
+C:\Users\gabri\source\repos\GestorEstoque\bin\Debug\GestorEstoque.exe
+C:\Users\gabri\source\repos\GestorEstoque\bin\Debug\GestorEstoque.pdb
+C:\Users\gabri\source\repos\GestorEstoque\obj\Debug\GestorEstoque.csproj.AssemblyReference.cache
+C:\Users\gabri\source\repos\GestorEstoque\obj\Debug\GestorEstoque.csproj.SuggestedBindingRedirects.cache
+C:\Users\gabri\source\repos\GestorEstoque\obj\Debug\GestorEstoque.csproj.CoreCompileInputs.cache
+C:\Users\gabri\source\repos\GestorEstoque\obj\Debug\GestorEstoque.exe
+C:\Users\gabri\source\repos\GestorEstoque\obj\Debug\GestorEstoque.pdb
